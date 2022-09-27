@@ -1,0 +1,45 @@
+.tags_new {
+    display: flex;
+    justify-content: center;
+}
+.inner_tag {
+    margin-top: 16px;
+    background: #36a549;
+    padding: 6px 10px 6px 6px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tags_new p {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.icon_tick svg {
+    width: 18px;
+    display: block;
+    margin-right: 6px;
+    fill: #fff;
+}  
+.product-single__meta .tags_new {
+    justify-content: flex-start;
+}
+.product-single__meta .inner_tag {
+    margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .tags_new p {
+      font-size: 10px;
+  }
+  .icon_tick svg {
+      width: 16px;
+      margin-right: 3px;
+  }
+  .inner_tag {
+      padding: 4px 8px 4px 4px;
+  }
+}
