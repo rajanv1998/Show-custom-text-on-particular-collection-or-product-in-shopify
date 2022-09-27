@@ -1,0 +1,61 @@
+{%- if product.collections.size > 0  -%}
+    <ul class="tags-list">
+    {% assign found = false %}
+    {% for collection in product.collections %}
+      {% if collection.title == "Schilderen op nummer | Morgen in huis"%}
+        {% assign found = true %}
+      {%- endif -%}
+      {%comment%}<li>{{ collection.title | link_to: collection.url }}</li>   {%endcomment%}                                    
+    {%- endfor -%}
+    </ul>
+{%- endif -%}
+
+{%- if settings.show_badges -%}
+<div class="tags_new">
+  <div class="{% if found == true or product.title == "Je Eigen Foto" or product.title == "Je eigen huisdier portret" %}inner_tag{% endif %}">
+      {% if found == true or product.title == "Je Eigen Foto" or product.title == "Je eigen huisdier portret"%}
+  <div class="icon_tick">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 17.292l-4.5-4.364 1.857-1.858 2.643 2.506 5.643-5.784 1.857 1.857-7.5 7.643z"></path></svg>
+  </div>
+    {% endif %}
+  {% if product.title == "Je Eigen Foto" or product.title == "Je eigen huisdier portret" %}
+  <p>{{settings.difftext}}</p>
+  {%else%}
+    {% if found == true%}
+  <p>{{settings.sametext}}</p>
+    {% endif %}
+  {% endif %}
+  </div>
+</div>
+{%- endif -%}     
+
+
+/********* global theme settings *********/
+{
+  "name": "Product badges",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_badges",
+      "label": "Show badge"
+    },
+    {
+      "type": "header",
+      "content": "Badge text for all products"
+    },
+    {
+      "type": "text",
+      "id": "sametext",
+      "label": "Badge text"
+    },
+    {
+      "type": "header",
+      "content": "Badge text for 2 products"
+    },
+    {
+      "type": "text",
+      "id": "difftext",
+      "label": "Badge text"
+    }
+  ]
+}                 
